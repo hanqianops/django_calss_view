@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <script src="{% static "bootstrap-3.3.7-dist/jquery-1.12.4.js" %}"></script>
+    <link href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <h3>{% block head %}{% endblock %}</h3>
+    <div style="text-align: right">
+        {% if request.user.is_authenticated %}
+            <p>用户: {{ request.user }}</p>
+            <a class="btn btn-default" href="{% url "logout" %}">注销</a>
+        {% endif %}
+    </div>
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>

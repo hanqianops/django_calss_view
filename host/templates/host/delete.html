@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}删除主机{% endblock %}
+{% block head %}删除主机{% endblock %}
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <p>是否确认删除主机:  {{ object.hostname }}?</p>
+    <input type="submit" value="Yes" />
+</form>
+{% endblock %}

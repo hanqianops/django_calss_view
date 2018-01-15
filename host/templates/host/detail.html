@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}详细信息{% endblock %}
+{% block head %}{{ object.hostname }}{% endblock %}
+{% block content %}
+    <p>主机名: {{ object.hostname }}</p>
+    <p>ip: {{ object.ip }}</p>
+    <p>内存: {{ object.mem }}</p>
+    <p>CPU: {{ object.cpu }}</p>
+    <p>设备类型: {{ object.deviceclass }}</p>
+{% endblock %}
